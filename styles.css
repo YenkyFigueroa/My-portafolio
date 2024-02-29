@@ -8,7 +8,7 @@
 }
 
 body{
-    background-color: #1f242d;
+    background-color: #22417b;
     color: #ededed;
 }
 header{
@@ -18,26 +18,33 @@ header{
     width: 100%;
     padding: 20px 10%;
     background: transparent;
-    display:flex ;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
 }
 .logo{
+    text-decoration: none;
     position: relative;
     font-size: 25px;
     color: #fff;
     text-transform: none;
     font-weight: 600;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
 }
 .navbar a {
     display: inline-block;
-    color: #fff;
     font-size: 25px;
+    color: #fff;
     text-decoration: none;
     font-weight: 500;
     margin-left: 35px;
     transition: .3s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
 }
 .navbar a:hover{
     color: rgb(5, 112, 138);
@@ -58,10 +65,113 @@ header{
 .home_content h3{
     font-size: 32px;
     font-weight: 700;
+    opacity: 0;
+    animation: slideBotton 1s ease forwards;
+    animation-delay: .7s;
+}
+.home_content h3:nth-of-type(2){
+    margin-bottom: 30px;
+}
+.home_content h3  span{
+    color: #0ef;
 }
 
 .home_content h1{
     font-size: 56px;
     font-weight: 700;
     margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home_content p {
+    font-size: 20px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-scl a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var);
+    margin: 30px 15px 30px 0;
+}
+
+.home-scl  a:hover{
+    background: #0ef;
+    color: #081b29;
+    box-shadow: 0 0 20px #0ef;
+}
+
+.btn-box{
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-box:hover{
+    box-shadow: 0 0 5px cyan,
+    0 0 25px cyan, 0 0 50px cyan,
+    0 0 100px cyan, 0 0 200px cyan;
+}
+
+@keyframes slideRight {
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes slideLeft {
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes slideTop {
+    0%{
+        transform: translatey(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translatey(0px);
+        opacity: 1;
+    }
+}
+@keyframes slideBotton {
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
 }
