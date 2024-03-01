@@ -8,16 +8,16 @@
 }
 
 body{
-    background-color: #22417b;
     color: #ededed;
+    background: #081b29;
 }
-header{
+.header{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 20px 10%;
-    background: transparent;
+    background: #051129;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,6 +45,7 @@ header{
     transition: .3s;
     opacity: 0;
     animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
 }
 .navbar a:hover{
     color: rgb(5, 112, 138);
@@ -71,6 +72,8 @@ header{
 }
 .home_content h3:nth-of-type(2){
     margin-bottom: 30px;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .7s;
 }
 .home_content h3  span{
     color: #0ef;
@@ -107,7 +110,7 @@ header{
     transition: .5s ease;
     opacity: 0;
     animation: slideLeft 1s ease forwards;
-    animation-delay: calc(.2s * var);
+    animation-delay: calc(.2s * var(--i));
     margin: 30px 15px 30px 0;
 }
 
@@ -127,6 +130,11 @@ header{
     letter-spacing: 1px;
     text-decoration: none;
     font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #0ef,
+    0 0 25px  #0ef;
 }
 
 .btn-box:hover{
@@ -134,6 +142,52 @@ header{
     0 0 25px cyan, 0 0 50px cyan,
     0 0 100px cyan, 0 0 200px cyan;
 }
+
+.about{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.about-img img {
+    padding-bottom: 20%;
+    max-width: 630px;
+    height:  auto;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.about-text h2{
+    font-size: 60px;
+}
+.about-text h2 span{
+    color: #0ef;
+}
+
+.about-text h4{
+    font-size: 29px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.7;
+    margin: 15px 0 30px;
+}
+
+.about-text p{
+    color: aliceblue;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 4rem;
+}
+
+
+
+
+
+
+
+
+
 
 @keyframes slideRight {
     0%{
